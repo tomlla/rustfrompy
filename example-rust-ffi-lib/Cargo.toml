@@ -1,0 +1,14 @@
+[package]
+name = "example-rust-ffi-lib"
+version = "0.1.0"
+authors = ["Nobuyasu Tomura <ntomura92@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+[lib]
+name = "example_rust_ffi_lib"
+crate-type = ["dylib"]
+
+[dependencies]
