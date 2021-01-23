@@ -1,7 +1,7 @@
 .PHONY: clean run build
 
 build:
-	docker build . -t rustfrompy
+	docker build . -t rustfrompy --target production
 	date > build
 
 run: build
