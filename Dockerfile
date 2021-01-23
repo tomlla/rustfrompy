@@ -13,13 +13,10 @@ COPY example-rust-ffi-lib /example-rust-ffi-lib
 RUN cargo build --release
 
 # -----------------------------------
-FROM core as production_base
+FROM core as production
 WORKDIR /pyapp
 RUN pipenv install --system --deploy --ignore-pipfile && \
     pip uninstall -y pipenv virtualenv-clone virtualenv
-
-# -----------------------------------
-FROM production_base as production_runtime
 COPY pyapp/ /pyapp
 RUN mkdir /example-rust-ffi-lib
 COPY --from=builder /example-rust-ffi-lib/target/release/libexample_rust_ffi_lib.so /example-rust-ffi-lib/libexample_rust_ffi_lib.so
