@@ -13,9 +13,9 @@ def call_func01():
 
 def call_func02():
     ffi = FFI()
-    ffi.cdef("""
-        *const char func02();
-    """)
+    ffi.cdef('''
+        const char *func02();
+    ''')
     rustlib = ffi.dlopen("/example-rust-ffi-lib/libexample_rust_ffi_lib.so")
     ret_string = rustlib.func02()
     print(f'ret_string: "{ret_string}"')
