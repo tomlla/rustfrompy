@@ -19,6 +19,7 @@ pub extern "C" fn func02() -> String {
 }
 */
 
+#[no_mangle]
 pub extern "C" fn func02() -> *const c_char {
     let cstring = CString::new("return-string").unwrap();
     return cstring.as_ptr();
