@@ -1,4 +1,4 @@
-FROM python:3.8.7-slim as core
+FROM python:3.9.1-slim as core
 
 RUN pip install pipenv
 # RUN apt-get update -qq && apt-get install -y build-essential
