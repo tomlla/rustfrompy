@@ -9,6 +9,6 @@ edition = "2018"
 
 [lib]
 name = "example_rust_ffi_lib"
-crate-type = ["dylib"]
+crate-type = ["cdylib"]
 
 [dependencies]
