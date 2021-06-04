@@ -10,3 +10,16 @@ run: build
 
 clean:
 	rm -rf build
+
+
+PYTHON_COMMAND_PREFIX:=poetry run
+PYTHON:=$(PYTHON_COMMAND_PREFIX) python
+
+py/mypy:
+	cd pyapp/ && $(PYTHON_COMMAND_PREFIX) mypy .
+
+py/fmt:
+	cd pyapp/ && $(PYTHON_COMMAND_PREFIX) black .
+
+py/check: py/mypy py/fmt
+
